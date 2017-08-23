@@ -4,7 +4,7 @@
   "description": "A URL based web monitor to monitor if a service is healthy.",
   "bin": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node src",
+    "start": "cp package.json src/ && ./node_modules/.bin/babel-node src",
     "build": "rm -rf dist && mkdir dist && ./node_modules/.bin/json -f package.json -e \"delete this.devDependencies;delete this.scripts;delete this.nyc;delete this.babel\" > dist/package.json && ./node_modules/.bin/babel src -d dist && cp README.md dist/",
     "prodtest": "TEST_DIR=dist npm run test",
     "test": "cp package.json src/ && ./node_modules/.bin/cross-env NODE_ENV=test ./node_modules/.bin/nyc ./node_modules/.bin/mocha -b",
