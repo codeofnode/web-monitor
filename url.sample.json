@@ -1,0 +1,11 @@
+[
+  {
+    "request": "https://vrest.io/health",
+    "requirements": [
+      {
+        "validator": "statusCode",
+        "value": 201
+      }
+    ]
+  }
+]
